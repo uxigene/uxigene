@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eugeniu Marinescu — Frontend Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Roboto';
+            color: #222;
+            background: #f6f6f6 url(bg.svg) repeat;
+            background-size: 8px;
+        }
+        h1, h2 {
+            font-weight: 300;
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+
+        .content {
+            display: flex;
+            position: relative;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 30px 0 0;
+            filter: grayscale(100%);
+        }
+
+        .contact {
+            display: none;
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            padding: 14px;
+            background-color: #e43c51;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .contact::after {
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: url('envelope.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .contact::before {
+            content: 'Email address copied!';
+            position: absolute;
+            color: #e43c51;
+            white-space: nowrap;
+            opacity: 0; 
+            font-size: 12px;
+            text-transform: uppercase;
+            top: 18px;
+            left: 60px;
+            
+        }
+
+        .contact.copied::before {
+            opacity: 1;
+            animation: fadeInOut 1000ms;
+        }
+
+        @keyframes fadeInOut {
+            0%   { opacity: 0 };
+            20%  { opacity: 1 };
+            80%  { opacity: 1 };
+            100% { opacity: 0 !important };
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <a href="#" class="contact"></a>
+        <img class="avatar" src="photo.jpg">
+        <div>
+            <h1>Hello, I'm Eugene</h1>
+            <h2>I'm <strong>Frontend Developer</strong> living in Luxembourg.</h2>
+            <h2>Involved in the <strong>software development</strong> since 2006.</h2>
+        </div>
+    </div>
+
+    <script>
+        // var contactButton = document.querySelector('.contact');
+
+        // contactButton.addEventListener('click', function(event) {
+        //     event.preventDefault();
+        //     contactButton.classList.add('copied');
+        //     setTimeout(function() { contactButton.classList.remove('copied') }, 2000);
+        // });
+    </script>
+</body>
+</html>
