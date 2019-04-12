@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eugeniu Marinescu — Frontend Developer</title>
+    <meta property="og:image:width" content="360">
+    <meta property="og:image:height" content="360">
+    <meta property="og:description" content="Hello, I'm Eugene! I'm Frontend Developer living in Luxembourg. Involved in the software development since 2006.">
+    <meta property="og:title" content="Frontend Developer">
+    <meta property="og:url" content="https://marinescu.dev">
+    <meta property="og:image" content="https://marinescu.dev/photo.jpg">
+
+    <title>Frontend Developer</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
 
     <style>
@@ -58,59 +65,57 @@
             filter: grayscale(100%);
         }
 
-        .contact {
-            display: none;
-            position: absolute;
-            top: -25px;
-            right: -25px;
-            width: 50px;
-            height: 50px;
-            box-sizing: border-box;
-            padding: 14px;
-            background-color: #e43c51;
+        .link {
+            width: 40px;
+            height: 40px;
+            fill: #f6f6f6;
             border-radius: 50%;
-            z-index: 1;
+            margin: 10px;
         }
 
-        .contact::after {
+        .link::after {
             display: block;
             content: '';
             width: 100%;
             height: 100%;
-            background-image: url('envelope.svg');
             background-size: contain;
             background-repeat: no-repeat;
         }
 
-        .contact::before {
-            content: 'Email address copied!';
-            position: absolute;
-            color: #e43c51;
+        .link.email::after {
+            background-image: url('envelope.svg');
+        }
+
+        .link.github::after {
+            background-image: url('github.svg');
+        }
+
+        .link.linkedin::after {
+             background-image: url('linkedin.svg'); 
+        }
+
+        .links {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .skills {
+            display: none;
+        }
+
+        .skill {
+            height: 20px;
+            line-height: 20px;
+            background-color: #222;
             white-space: nowrap;
-            opacity: 0; 
-            font-size: 12px;
-            text-transform: uppercase;
-            top: 18px;
-            left: 60px;
-            
-        }
-
-        .contact.copied::before {
-            opacity: 1;
-            animation: fadeInOut 1000ms;
-        }
-
-        @keyframes fadeInOut {
-            0%   { opacity: 0 };
-            20%  { opacity: 1 };
-            80%  { opacity: 1 };
-            100% { opacity: 0 !important };
+            color: #fff;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <a href="#" class="contact"></a>
         <img class="avatar" src="photo.jpg">
         <div>
             <h1>Hello, I'm <strong>Eugene</strong></h1>
@@ -118,15 +123,49 @@
             <h2>Involved in the <strong>software development</strong> since 2006.</h2>
         </div>
     </div>
+    <div class="links">
+        <script>document.write(atob("PGEgaHJlZj0ibWFpbHRvOm1hcmluZXNjdS5ldmdoZW5paUBnbWFpbC5jb20iIGNsYXNzPSJsaW5rIGVtYWlsIj4="))</script>
+        <a href="https://github.com/marinescuevghenii" class="link github"></a>
+        <a href="https://www.linkedin.com/in/marinescu" class="link linkedin"></a>
+    </div>
+    <div class="skills">
+        <div class="skill">Html</div>
 
+        <div class="skill">Css</div>
+        <div class="skill">Sass</div>
+        <div class="skill">Less</div>
+        <div class="skill">Stylus</div>
+        
+        <div class="skill">JavaScript</div>
+        <div class="skill">CoffeeScript</div>
+
+        <div class="skill">React</div>
+        <div class="skill">React Native</div>
+        <div class="skill">Redux</div>
+        <div class="skill">Vue</div>
+        <div class="skill">Angular</div>
+        <div class="skill">Backbone</div>
+        <div class="skill">Ember</div>
+
+        <div class="skill">Python</div>
+
+        <div class="skill">Express JS</div>
+        <div class="skill">Django</div>
+
+        <div class="skill">ActionScript</div>
+
+        <div class="skill">Webpack</div>
+        <div class="skill">Gulp</div>
+        <div class="skill">Grunt</div>
+
+        <div class="skill">Git</div>
+
+        <div class="skill">Agile</div>
+
+        <div class="skill">Wowza</div>
+        <div class="skill">Live Streaming</div>
+    </div>
     <script>
-        // var contactButton = document.querySelector('.contact');
-
-        // contactButton.addEventListener('click', function(event) {
-        //     event.preventDefault();
-        //     contactButton.classList.add('copied');
-        //     setTimeout(function() { contactButton.classList.remove('copied') }, 2000);
-        // });
     </script>
 </body>
 </html>
