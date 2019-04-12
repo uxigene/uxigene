@@ -55,14 +55,38 @@
             display: flex;
             padding: 10px;
             position: relative;
+            cursor: pointer;
         }
 
         .avatar {
+            position: relative;
             width: 100px;
             height: 100px;
             min-width: 100px;
-            border-radius: 50%;
             margin: 0 30px 0 0;
+            transition: width 0.5s, height 0.5s, margin-right 0.5s;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            filter: grayscale(100%);
+            transition: filter 0.5s;
+        }
+
+        .content:hover .avatar {
+            width: 180px;
+            height: 180px;
+            margin-right: 150px;
+        }
+
+        .content:hover .avatar img {
+            filter: grayscale(0);
+        }
+
+        .content:hover .skills {
+            opacity: 1;
         }
 
         .link {
@@ -100,7 +124,15 @@
         }
 
         .skills {
-            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            opacity: 0;
+            transition: opacity 0.5s;
         }
 
         .skill {
@@ -109,14 +141,98 @@
             background-color: #222;
             white-space: nowrap;
             color: #fff;
-            padding: 0 10px;
             box-sizing: border-box;
+            position: absolute;
+            padding: 0 10px;
+            transform-origin: -100px 50%;
+            text-transform: uppercase;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            margin-left: 100px;
+            margin-top: -10px;
+            pointer-events: none;
         }
+
+        .skill span {
+            display: block;
+        }
+
+        .skill:nth-child(1)  { transform:  rotate(calc((360deg / 26) * 1)); } 
+        .skill:nth-child(2)  { transform:  rotate(calc((360deg / 26) * 2)); }
+        .skill:nth-child(3)  { transform:  rotate(calc((360deg / 26) * 3)); }
+        .skill:nth-child(4)  { transform:  rotate(calc((360deg / 26) * 4)); }
+        .skill:nth-child(5)  { transform:  rotate(calc((360deg / 26) * 5)); }
+        .skill:nth-child(6)  { transform:  rotate(calc((360deg / 26) * 6)); }
+        .skill:nth-child(7)  { transform:  rotate(calc((360deg / 26) * 7)); }
+        .skill:nth-child(8)  { transform:  rotate(calc((360deg / 26) * 8)); }
+        .skill:nth-child(9)  { transform:  rotate(calc((360deg / 26) * 9)); }
+        .skill:nth-child(10) { transform:  rotate(calc((360deg / 26) * 10)); }
+        .skill:nth-child(11) { transform:  rotate(calc((360deg / 26) * 11)); }
+        .skill:nth-child(12) { transform:  rotate(calc((360deg / 26) * 12)); }
+        .skill:nth-child(13) { transform:  rotate(calc((360deg / 26) * 13)); }
+        .skill:nth-child(14) { transform:  rotate(calc((360deg / 26) * 14)); }
+        .skill:nth-child(15) { transform:  rotate(calc((360deg / 26) * 15)); }
+        .skill:nth-child(16) { transform:  rotate(calc((360deg / 26) * 16)); }
+        .skill:nth-child(17) { transform:  rotate(calc((360deg / 26) * 17)); }
+        .skill:nth-child(18) { transform:  rotate(calc((360deg / 26) * 18)); }
+        .skill:nth-child(19) { transform:  rotate(calc((360deg / 26) * 19)); }
+        .skill:nth-child(20) { transform:  rotate(calc((360deg / 26) * 20)); }
+        .skill:nth-child(21) { transform:  rotate(calc((360deg / 26) * 21)); }
+        .skill:nth-child(22) { transform:  rotate(calc((360deg / 26) * 22)); }
+        .skill:nth-child(23) { transform:  rotate(calc((360deg / 26) * 23)); }
+        .skill:nth-child(24) { transform:  rotate(calc((360deg / 26) * 24)); }
+        .skill:nth-child(25) { transform:  rotate(calc((360deg / 26) * 25)); } 
+        .skill:nth-child(26) { transform:  rotate(calc((360deg / 26) * 26)); }
+
+        .skill:nth-child(7)  span { transform: rotate(180deg); }
+        .skill:nth-child(8)  span { transform: rotate(180deg); }
+        .skill:nth-child(9)  span { transform: rotate(180deg); }
+        .skill:nth-child(10) span { transform: rotate(180deg); }
+        .skill:nth-child(11) span { transform: rotate(180deg); }
+        .skill:nth-child(12) span { transform: rotate(180deg); }
+        .skill:nth-child(13) span { transform: rotate(180deg); }
+        .skill:nth-child(14) span { transform: rotate(180deg); }
+        .skill:nth-child(15) span { transform: rotate(180deg); }
+        .skill:nth-child(16) span { transform: rotate(180deg); }
+        .skill:nth-child(17) span { transform: rotate(180deg); }
+        .skill:nth-child(18) span { transform: rotate(180deg); }
+        .skill:nth-child(19) span { transform: rotate(180deg); }
     </style>
 </head>
 <body>
     <div class="content">
-        <img class="avatar" src="photo.jpg">
+        <figure class="avatar">
+            <div class="skills">
+                <div class="skill"><span>Html</span></div>
+                <div class="skill"><span>Css</span></div>
+                <div class="skill"><span>Sass</span></div>
+                <div class="skill"><span>Less</span></div>
+                <div class="skill"><span>Stylus</span></div>
+                <div class="skill"><span>JavaScript</span></div>
+                <div class="skill"><span>CoffeeScript</span></div>
+                <div class="skill"><span>React</span></div>
+                <div class="skill"><span>React Native</span></div>
+                <div class="skill"><span>Redux</span></div>
+                <div class="skill"><span>Vue</span></div>
+                <div class="skill"><span>Angular</span></div>
+                <div class="skill"><span>Backbone</span></div>
+                <div class="skill"><span>Ember</span></div>
+                <div class="skill"><span>Python</span></div>
+                <div class="skill"><span>Express JS</span></div>
+                <div class="skill"><span>Electron JS</span></div>
+                <div class="skill"><span>Django</span></div>
+                <div class="skill"><span>ActionScript</span></div>
+                <div class="skill"><span>Webpack</span></div>
+                <div class="skill"><span>Gulp</span></div>
+                <div class="skill"><span>Gulp</span></div>
+                <div class="skill"><span>Git</span></div>
+                <div class="skill"><span>Agile</span></div>
+                <div class="skill"><span>Wowza</span></div>
+                <div class="skill"><span>Live Streaming</span></div>
+            </div>
+            <img src="photo.jpg">
+        </figure>
         <div>
             <h1>Hello, I'm <strong>Eugene</strong></h1>
             <h2>I'm <strong>Frontend Developer</strong> living in Luxembourg.</h2>
@@ -127,43 +243,6 @@
         <script>document.write(atob("PGEgaHJlZj0ibWFpbHRvOm1hcmluZXNjdS5ldmdoZW5paUBnbWFpbC5jb20iIGNsYXNzPSJsaW5rIGVtYWlsIj4="))</script>
         <a href="https://github.com/marinescuevghenii" class="link github"></a>
         <a href="https://www.linkedin.com/in/marinescu" class="link linkedin"></a>
-    </div>
-    <div class="skills">
-        <div class="skill">Html</div>
-
-        <div class="skill">Css</div>
-        <div class="skill">Sass</div>
-        <div class="skill">Less</div>
-        <div class="skill">Stylus</div>
-        
-        <div class="skill">JavaScript</div>
-        <div class="skill">CoffeeScript</div>
-
-        <div class="skill">React</div>
-        <div class="skill">React Native</div>
-        <div class="skill">Redux</div>
-        <div class="skill">Vue</div>
-        <div class="skill">Angular</div>
-        <div class="skill">Backbone</div>
-        <div class="skill">Ember</div>
-
-        <div class="skill">Python</div>
-
-        <div class="skill">Express JS</div>
-        <div class="skill">Django</div>
-
-        <div class="skill">ActionScript</div>
-
-        <div class="skill">Webpack</div>
-        <div class="skill">Gulp</div>
-        <div class="skill">Grunt</div>
-
-        <div class="skill">Git</div>
-
-        <div class="skill">Agile</div>
-
-        <div class="skill">Wowza</div>
-        <div class="skill">Live Streaming</div>
     </div>
     <script>
     </script>
